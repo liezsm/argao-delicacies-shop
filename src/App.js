@@ -1,17 +1,23 @@
+import Header from "./components/Header";
+import Products from "./components/Products";
+import CartItems from "./components/CartItems";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductDetail from "./components/ProductDetail";
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='App'>
+        <Header />
+        <main>
+          <Routes>
+            <Route path='/' element={<Products />} />
+
+            <Route path='/product/:id' element={<ProductDetail />} />
+            <Route path='/cartItems' element={<CartItems />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
