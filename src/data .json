@@ -2,50 +2,50 @@
   "products": [
     {
       "id": 1,
-      "name": "Guilang's Tableya classic",
-      "price": 50,
+      "name": "Guilang's Tableya classic 200gram",
+      "price": 90,
       "img": "./images/ecommerce/classic)200g.png"
     },
     {
       "id": 2,
-      "name": "Guilang's Tableya 335g",
-      "price": 50,
+      "name": "Guilang's Tableya 335gram",
+      "price": 130,
       "img": "./images/ecommerce/classic_335g.png"
     },
     {
       "id": 3,
-      "name": "Guilang's Tableya Premium",
-      "price": 33,
+      "name": "Guilang's Tableya Premium 200gram",
+      "price": 100,
       "img": "./images/ecommerce/premium_200g.png"
     },
     {
       "id": 4,
-      "name": "Guilang's Tableya Premium",
-      "price": 90,
+      "name": "Guilang's Tableya Premium 335gram",
+      "price": 140,
       "img": "./images/ecommerce/335g_premium.png"
     },
     {
       "id": 5,
       "name": "Guilang's Tableya Premium Tubes",
-      "price": 90,
+      "price": 220,
       "img": "./images/ecommerce/premium_tubes.png"
     },
     {
       "id": 6,
       "name": "Torta de Tuba",
-      "price": 90,
+      "price": 30,
       "img": "./images/ecommerce/torta de tuba.jpg"
     },
     {
       "id": 7,
       "name": "Torta de Latte",
-      "price": 90,
+      "price": 50,
       "img": "./images/ecommerce/torta de latte.jpg"
     },
     {
       "id": 8,
       "name": "Torta de Ube",
-      "price": 90,
+      "price": 40,
       "img": "./images/ecommerce/torte ubes.jpg"
     }
   ]

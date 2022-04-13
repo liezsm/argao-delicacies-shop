@@ -1,18 +1,70 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem, removeItem } from "../redux/cartSlice";
 
 const CartItems = () => {
+  const dispatch = useDispatch();
   const addedToCart = useSelector((state) => state.cartItems);
+
   console.log(addedToCart);
 
-  return (
-    <div className='cart-wrapper'>
-      <h1>Added to Cart Items</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, facilis.
-      </p>
-    </div>
+  const handleDecrement = (id, name, price, quantity, totalPrice) => {
+    dispatch(
+      removeItem({
+        id,
+        name,
+        price,
+        quantity,
+        totalPrice,
+      })
+    );
+  };
+
+  const handleIncrement = (id, name, price, quantity, totalPrice) => {
+    dispatch(
+      addItem({
+        id,
+        name,
+        price,
+        quantity,
+        totalPrice,
+      })
+    );
+  };
+
+  const itemsDiv = addedToCart.map(
+    ({ id, name, price, quantity, totalPrice }, index) => (
+      <div className='added_item' key={index}>
+        <p>{name}</p>
+        <p>{price}</p>
+        <p>X{quantity}</p>
+        <div className='counter_items'>
+          <button
+            className='decrement'
+            onClick={() =>
+              handleDecrement(id, name, price, quantity, totalPrice)
+            }
+          >
+            -
+          </button>
+          <div className='number' data-quantity>
+            {quantity}
+          </div>
+          <button
+            className='increment'
+            onClick={() =>
+              handleIncrement(id, name, price, quantity, totalPrice)
+            }
+          >
+            +
+          </button>
+        </div>
+        <p>{totalPrice}</p>
+      </div>
+    )
   );
+
+  return <div className='cart-wrapper'>{itemsDiv}</div>;
 };
 
 export default CartItems;

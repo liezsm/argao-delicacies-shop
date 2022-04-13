@@ -76,3 +76,41 @@ main {
     // transform: rotate(-10deg);
   }
 }
+
+// product detail
+
+.counter_items {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+
+  button {
+    width: 40px;
+    border: none;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// cart items
+
+.cart-wrapper {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.added_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  > * {
+    flex: 1;
+  }
+}

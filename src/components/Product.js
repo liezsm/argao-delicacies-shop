@@ -5,18 +5,7 @@ import { addItem } from "../redux/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 export const Product = ({ id, name, img, price }) => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  function handleCartItem() {
-    dispatch(
-      addItem({
-        id,
-        name,
-        price,
-      })
-    );
-  }
 
   function routeChange() {
     let path = `/product/${id}`;
@@ -27,9 +16,6 @@ export const Product = ({ id, name, img, price }) => {
       <img src={img} alt={name} />
       <p>{name}</p>
       <p> &#8369;{price}</p>
-      <button className='addtocart-btn' onClick={handleCartItem}>
-        Add to Cart
-      </button>
     </div>
   );
 };
