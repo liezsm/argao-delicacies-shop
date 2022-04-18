@@ -119,3 +119,13 @@ main {
   background-color: gray;
   text-align: left;
 }
+
+// footer area
+
+footer {
+  width: 100%;
+  background-color: gray;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
