@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/argao-delicacies-shop/static/css/main.1dba920f.css",
+    "main.js": "/argao-delicacies-shop/static/js/main.6155541d.js",
+    "static/js/787.dcc73137.chunk.js": "/argao-delicacies-shop/static/js/787.dcc73137.chunk.js",
+    "index.html": "/argao-delicacies-shop/index.html",
+    "main.1dba920f.css.map": "/argao-delicacies-shop/static/css/main.1dba920f.css.map",
+    "main.6155541d.js.map": "/argao-delicacies-shop/static/js/main.6155541d.js.map",
+    "787.dcc73137.chunk.js.map": "/argao-delicacies-shop/static/js/787.dcc73137.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1dba920f.css",
+    "static/js/main.6155541d.js"
+  ]
+}
