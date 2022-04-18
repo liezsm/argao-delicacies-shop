@@ -2,11 +2,11 @@ import Header from "./components/Header";
 import Products from "./components/Products";
 import CartItems from "./components/CartItems";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import ProductDetail from "./components/ProductDetail";
 function App() {
   return (
-    <Router>
+    <HashRouter basename='/argao-delicacies-shop'>
       <div className='App'>
         <Header />
         <main>
@@ -19,7 +19,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
