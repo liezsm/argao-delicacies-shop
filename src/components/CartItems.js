@@ -60,11 +60,24 @@ const CartItems = () => {
           </button>
         </div>
         <p>{totalPrice}</p>
+        <button>Delete</button>
       </div>
     )
   );
 
-  return <div className='cart-wrapper'>{itemsDiv}</div>;
+  return (
+    <div className='cart-wrapper'>
+      <div className='added_item header'>
+        <p>Product</p>
+        <p>Unit Price</p>
+        <p>Quantity</p>
+        <p>Add Items</p>
+        <p>Total</p>
+        <p>Actions</p>
+      </div>
+      {itemsDiv}
+    </div>
+  );
 };
 
 export default CartItems;

@@ -48,7 +48,7 @@ main {
   border: 2px solid red;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .product_item {
@@ -60,19 +60,20 @@ main {
 .product_item_detail {
   border: 1px solid red;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .product_item_image {
   border: 1px solid red;
   display: grid;
   place-items: center;
+  max-width: 500px;
 
   img {
     // border: 2px solid green;
 
     width: 95%;
-    height: 80%;
+    height: 95%;
     // transform: rotate(-10deg);
   }
 }
@@ -80,7 +81,7 @@ main {
 // product detail
 
 .counter_items {
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   align-items: center;
 
@@ -107,10 +108,14 @@ main {
 .added_item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  justify-content: center;
+  text-align: left;
 
   > * {
     flex: 1;
   }
+}
+.added_item.header {
+  background-color: gray;
+  text-align: left;
 }
