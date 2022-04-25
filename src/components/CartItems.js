@@ -75,6 +75,7 @@ const CartItems = () => {
         <p>Total</p>
         <p>Actions</p>
       </div>
+
       {itemsDiv}
     </div>
   );

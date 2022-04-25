@@ -5,14 +5,24 @@ import { Product } from "./Product";
 import { useDispatch } from "react-redux";
 import { addItem } from "../redux/cartSlice";
 import { useState } from "react";
+import importAll from "./importImages";
 
 const ProductDetail = () => {
+  const getImages = importAll(
+    require.context("../images", false, /\.(png|jpe?g|svg)$/)
+  );
+
   const { id } = useParams();
   const product = useSelector((state) =>
     state.products.filter((item) => item.id == id)
   );
 
   const { name, img, price } = product[0];
+  //get the product image
+
+  const prod_img = Object.keys(getImages)
+    .filter((i) => i.includes(img))
+    .map((img) => getImages[img]);
 
   const dispatch = useDispatch();
 
@@ -44,7 +54,7 @@ const ProductDetail = () => {
   return (
     <div className='product_item_detail'>
       <div className='product_item_image'>
-        <img src={`/${img}`} alt={name} />
+        <img src={prod_img} alt={name} />
       </div>
       <div className='product_item_info'>
         <p>{name}</p>
@@ -62,7 +72,7 @@ const ProductDetail = () => {
           </button>
         </div>
 
-        <button className='addtocart-btn' onClick={handleCartItem}>
+        <button className='addtocart-btn rad-shadow' onClick={handleCartItem}>
           Add to Cart
         </button>
       </div>
