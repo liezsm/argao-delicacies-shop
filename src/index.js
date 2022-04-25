@@ -6,16 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter basename='/argao-delicacies-shop'>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </Provider>
 );
 
