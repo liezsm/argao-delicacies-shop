@@ -1,15 +1,29 @@
 {
   "files": {
-    "main.css": "/argao-delicacies-shop/static/css/main.1dba920f.css",
-    "main.js": "/argao-delicacies-shop/static/js/main.db6966a3.js",
+    "main.css": "/argao-delicacies-shop/static/css/main.ca7e7e5b.css",
+    "main.js": "/argao-delicacies-shop/static/js/main.924ba57e.js",
     "static/js/787.dcc73137.chunk.js": "/argao-delicacies-shop/static/js/787.dcc73137.chunk.js",
+    "static/media/torta latte.jpg": "/argao-delicacies-shop/static/media/torta latte.083f4f76763b975d83a3.jpg",
+    "static/media/torta de tuba.jpg": "/argao-delicacies-shop/static/media/torta de tuba.4042cec6b8241249c897.jpg",
+    "static/media/premium_200g.png": "/argao-delicacies-shop/static/media/premium_200g.5bd05f3a2dc9bae944ed.png",
+    "static/media/c-200.png": "/argao-delicacies-shop/static/media/c-200.c38eb4508aa26673e857.png",
+    "static/media/classic)200g.png": "/argao-delicacies-shop/static/media/classic)200g.c38eb4508aa26673e857.png",
+    "static/media/277446300___n.jpg": "/argao-delicacies-shop/static/media/277446300_1797085943823425_3186571696024895733_n.02ce5a83fdc489a68a02.jpg",
+    "static/media/premium_tubes.png": "/argao-delicacies-shop/static/media/premium_tubes.3dc3c6f2a4e5bb64004b.png",
+    "static/media/335g_premium.png": "/argao-delicacies-shop/static/media/335g_premium.ea4ca6993818063f1a39.png",
+    "static/media/classic_335g.png": "/argao-delicacies-shop/static/media/classic_335g.d79e14f63bfd8f512309.png",
+    "static/media/torta ube (2).png": "/argao-delicacies-shop/static/media/torta ube (2).60c1c03c9e4d134ff125.png",
+    "static/media/torta.jpg": "/argao-delicacies-shop/static/media/torta.2d1daca0d3b863c33a2d.jpg",
+    "static/media/244185871___n.jpg": "/argao-delicacies-shop/static/media/244185871_1996173360550101_597721530592499118_n.49c42c5776c15565b904.jpg",
+    "static/media/torta de latte.jpg": "/argao-delicacies-shop/static/media/torta de latte.c942a85df56743960751.jpg",
+    "static/media/torte ubes.jpg": "/argao-delicacies-shop/static/media/torte ubes.09c068ca235812e2ae9c.jpg",
     "index.html": "/argao-delicacies-shop/index.html",
-    "main.1dba920f.css.map": "/argao-delicacies-shop/static/css/main.1dba920f.css.map",
-    "main.db6966a3.js.map": "/argao-delicacies-shop/static/js/main.db6966a3.js.map",
+    "main.ca7e7e5b.css.map": "/argao-delicacies-shop/static/css/main.ca7e7e5b.css.map",
+    "main.924ba57e.js.map": "/argao-delicacies-shop/static/js/main.924ba57e.js.map",
     "787.dcc73137.chunk.js.map": "/argao-delicacies-shop/static/js/787.dcc73137.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1dba920f.css",
-    "static/js/main.db6966a3.js"
+    "static/css/main.ca7e7e5b.css",
+    "static/js/main.924ba57e.js"
   ]
 }
