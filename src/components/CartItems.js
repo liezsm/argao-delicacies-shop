@@ -65,6 +65,11 @@ const CartItems = () => {
     )
   );
 
+  // get the total of all
+
+  const total = addedToCart
+    .map((item) => item.totalPrice)
+    .reduce((a, b) => a + b, 0);
   return (
     <div className='cart-wrapper'>
       <div className='added_item header'>
@@ -77,6 +82,9 @@ const CartItems = () => {
       </div>
 
       {itemsDiv}
+      <div className='total'>
+        <h2>&#8369;{total}</h2>
+      </div>
     </div>
   );
 };

@@ -222,6 +222,17 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 0.89rem;
+
+  .counter_items {
+    button {
+      width: 15px;
+    }
+
+    .number {
+      background: none;
+    }
+  }
 }
 
 .added_item {
@@ -232,11 +243,19 @@ main {
 
   > * {
     flex: 1;
+    padding: 0 0.3rem;
   }
 }
+
 .added_item.header {
   background-color: gray;
   text-align: left;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
 }
 
 // footer area
