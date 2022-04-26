@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addItem, removeItem } from "../redux/cartSlice";
+import { addItem, removeItem, deleteItem } from "../redux/cartSlice";
 
 const CartItems = () => {
   const dispatch = useDispatch();
@@ -32,6 +32,13 @@ const CartItems = () => {
     );
   };
 
+  const handleDelete = (id) => {
+    dispatch(
+      deleteItem({
+        id: id,
+      })
+    );
+  };
   const itemsDiv = addedToCart.map(
     ({ id, name, price, quantity, totalPrice }, index) => (
       <div className='added_item' key={index}>
@@ -60,7 +67,7 @@ const CartItems = () => {
           </button>
         </div>
         <p>{totalPrice}</p>
-        <button>Delete</button>
+        <button onClick={() => handleDelete(id)}>Delete</button>
       </div>
     )
   );
@@ -70,6 +77,7 @@ const CartItems = () => {
   const total = addedToCart
     .map((item) => item.totalPrice)
     .reduce((a, b) => a + b, 0);
+
   return (
     <div className='cart-wrapper'>
       <div className='added_item header'>
