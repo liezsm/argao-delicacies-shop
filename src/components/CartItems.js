@@ -2,14 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, removeItem, deleteItem } from "../redux/cartSlice";
 
-const cartFromLocal = JSON.parse(localStorage.getItem("cart")) || [];
-
 const CartItems = () => {
   const dispatch = useDispatch();
   const cartItemsRedux = useSelector((state) => state.cartItems);
-  console.log("redux", cartItemsRedux);
-
-  // if localstorage has no items yet set it to the data from redux
 
   const handleDecrement = (id, name, price, quantity, totalPrice) => {
     dispatch(
@@ -29,7 +24,7 @@ const CartItems = () => {
         id,
         name,
         price,
-        quantity,
+        quantity: 1,
         totalPrice,
       })
     );
@@ -93,9 +88,15 @@ const CartItems = () => {
         <p>Actions</p>
       </div>
 
-      {itemsDiv}
+      {cartItemsRedux.length > 0 ? (
+        itemsDiv
+      ) : (
+        <div className='added_item' id='no_item'>
+          There are no items on the cart
+        </div>
+      )}
       <div className='total'>
-        <h2>&#8369;{total}</h2>
+        {cartItemsRedux.length > 0 && <h2>&#8369;{total}</h2>}
       </div>
     </div>
   );

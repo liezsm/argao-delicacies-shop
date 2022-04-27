@@ -33,7 +33,6 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
 }
 
 img {
@@ -60,6 +59,8 @@ header {
 
   .icon {
     font-size: 2rem;
+
+    color: var(--text1-dim);
   }
 
   .shop-name {
@@ -247,6 +248,10 @@ main {
   }
 }
 
+#no_item {
+  font-weight: bold;
+  font-size: var(--font-size-fluid-2);
+}
 .added_item.header {
   background-color: gray;
   text-align: left;
