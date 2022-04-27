@@ -6,14 +6,33 @@ import reportWebVitals from "./reportWebVitals";
 
 import store from "./redux/store";
 import { Provider } from "react-redux";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, BrowserRouter as Router } from "react-router-dom";
+import { hydrate } from "./redux/cartSlice";
+
+store.subscribe(() => {
+  localStorage.setItem("cart", JSON.stringify(store.getState().cartItems));
+});
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
 
+const getCartFromLocalStorage = () => {
+  try {
+    const persistedState = localStorage.getItem("cart");
+    if (persistedState) return JSON.parse(persistedState);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const cartItems = getCartFromLocalStorage();
+if (cartItems) {
+  store.dispatch(hydrate(cartItems));
+}
+
 root.render(
   <Provider store={store}>
-    <HashRouter basename='/argao-delicacies-shop'>
+    <HashRouter basename='argao-delicacies-shop'>
       <App />
     </HashRouter>
   </Provider>

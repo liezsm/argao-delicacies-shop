@@ -1,15 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// exp this sof for persisting the localstorage items into the redux state
+// https://stackoverflow.com/questions/67248867/react-redux-toolkit-how-can-i-can-store-my-initialstate-to-localstorage-using-c
 const cartReducer = createSlice({
   name: "cartItems",
   initialState: [],
   reducers: {
+    hydrate: (state, action) => {
+      // do not do state = action.payload it will not update the store
+      return action.payload;
+    },
     addItem(state, action) {
       const newItem = action.payload;
       //  check if the new  item is already in the cart
       const existing = state.find((item) => item.id == newItem.id);
       if (existing) {
-        existing.quantity++;
+        existing.quantity += newItem.quantity;
         existing.totalPrice += newItem.price;
         return;
       }
@@ -40,4 +46,5 @@ const cartReducer = createSlice({
 
 export default cartReducer.reducer;
 
-export const { addItem, removeItem, deleteItem } = cartReducer.actions;
+export const { addItem, removeItem, deleteItem, setCart, hydrate } =
+  cartReducer.actions;
