@@ -6,10 +6,11 @@ import CartItems from "./CartItems";
 import { Routes, Route } from "react-router-dom";
 import ProductDetail from "./ProductDetail";
 
-const Homepage = () => {
+const Homepage = ({ loading }) => {
   return (
     <>
       <Header />
+
       <main>
         <Routes>
           <Route path='/' element={<Products />} />
@@ -17,7 +18,7 @@ const Homepage = () => {
           <Route path='/product/:id' element={<ProductDetail />} />
           <Route path='/cartItems' element={<CartItems />} />
         </Routes>
-      </main>{" "}
+      </main>
     </>
   );
 };

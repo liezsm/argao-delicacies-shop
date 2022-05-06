@@ -15,11 +15,11 @@ import {
 
 library.add(fab, faShoppingBag, faEyeSlash, faEye);
 
-const LoginPage = ({ isLogged }) => {
+const LoginPage = ({ isLogged, loading }) => {
   return (
     <div className='welcome'>
       <LoginHeader />
-      <LoginForm isLogged={isLogged} />
+      <LoginForm isLogged={isLogged} loading={loading} />
     </div>
   );
 };

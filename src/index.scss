@@ -9,6 +9,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --lightGrey: #eee;
+  --medGrey: #353535;
+  --darkGrey: #1c1c1c;
+}
+
 html {
   --brand-dim: var(--orange-4);
 
@@ -334,6 +340,14 @@ footer {
   max-height: 100%;
   margin-inline: auto;
   color: #000;
+  a {
+    color: blue;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 
   h2 {
     color: inherit;
@@ -430,4 +444,24 @@ footer {
 
 .signUp a {
   text-decoration: none;
+}
+
+// spinner
+.spinner {
+  border: 5px solid var(--lightGrey);
+  border-top: 5px solid var(--medGrey);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 800ms linear infinite;
+
+  margin: 20px auto;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
