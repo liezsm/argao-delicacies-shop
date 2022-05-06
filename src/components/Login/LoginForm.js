@@ -21,6 +21,7 @@ import {
   SIGNUP,
 } from "../../firebase/functions";
 import { auth } from "../../firebase-config";
+import { Link } from "react-router-dom";
 
 const LoginForm = ({ isLogged, loading }) => {
   const [type, setType] = useState("email");
@@ -137,15 +138,15 @@ const LoginForm = ({ isLogged, loading }) => {
           <div className='signUp'>
             <p>
               New to Shop?
-              <a
-                href='/'
+              <Link
+                to='/'
                 onClick={() => {
                   setType("signup");
                 }}
               >
                 {" "}
                 Sign up{" "}
-              </a>
+              </Link>
             </p>
           </div>
         </div>
