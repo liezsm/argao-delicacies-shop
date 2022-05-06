@@ -1,21 +1,16 @@
-import Header from "./components/Header";
-import Products from "./components/Products";
-import CartItems from "./components/CartItems";
 import Footer from "./components/Footer";
-import { Routes, Route } from "react-router-dom";
-import ProductDetail from "./components/ProductDetail";
+
+import LoginPage from "./components/Login/LoginPage";
+import { useState } from "react";
+import Homepage from "./components/Homepage";
+
 function App() {
+  const [isLogin, setLogin] = useState(false);
+
   return (
     <div className='App'>
-      <Header />
-      <main>
-        <Routes>
-          <Route path='/' element={<Products />} />
-
-          <Route path='/product/:id' element={<ProductDetail />} />
-          <Route path='/cartItems' element={<CartItems />} />
-        </Routes>
-      </main>
+      {!isLogin && <LoginPage isLogged={setLogin} />}
+      {isLogin && <Homepage />}
       <Footer />
     </div>
   );
