@@ -18,14 +18,14 @@ const CartItems = () => {
     );
   };
 
-  const handleIncrement = (id, name, price, quantity, totalPrice) => {
+  const handleIncrement = (id, name, price, totalPrice) => {
     dispatch(
       addItem({
         id,
         name,
         price,
         quantity: 1,
-        totalPrice,
+        totalPrice: price,
       })
     );
   };
@@ -58,9 +58,7 @@ const CartItems = () => {
           </div>
           <button
             className='increment'
-            onClick={() =>
-              handleIncrement(id, name, price, quantity, totalPrice)
-            }
+            onClick={() => handleIncrement(id, name, price, totalPrice)}
           >
             +
           </button>

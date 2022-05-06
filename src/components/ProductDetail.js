@@ -51,6 +51,7 @@ const ProductDetail = () => {
     setTotal((prev) => prev + price);
   };
 
+  console.log("total", total);
   return (
     <div className='product_item_detail'>
       <div className='product_item_image'>

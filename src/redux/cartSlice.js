@@ -16,7 +16,7 @@ const cartReducer = createSlice({
       const existing = state.find((item) => item.id == newItem.id);
       if (existing) {
         existing.quantity += newItem.quantity;
-        existing.totalPrice += newItem.price;
+        existing.totalPrice += newItem.totalPrice;
         return;
       }
 

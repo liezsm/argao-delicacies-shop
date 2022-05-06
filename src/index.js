@@ -32,9 +32,9 @@ if (cartItems) {
 
 root.render(
   <Provider store={store}>
-    <HashRouter basename='argao-delicacies-shop'>
+    <Router basename='argao-delicacies-shop'>
       <App />
-    </HashRouter>
+    </Router>
   </Provider>
 );
 
