@@ -138,7 +138,7 @@ const LoginForm = ({ isLogged, loading }) => {
             <p>
               New to Shop?
               <a
-                href='#'
+                href='/'
                 onClick={() => {
                   setType("signup");
                 }}
