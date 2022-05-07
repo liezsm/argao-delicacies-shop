@@ -52,9 +52,16 @@ img {
   object-position: center;
 }
 
+// holder outlet
+.content {
+  width: 100%;
+  height: 100%;
+}
+
 // header
 
 header {
+  width: 100%;
   background-image: var(--gradient-23);
   box-shadow: var(--shadow-2);
   padding: 1rem;
@@ -99,10 +106,15 @@ header {
     z-index: -1;
   }
 }
-
+.App {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
 main {
   // background-color: blue;
-
+  width: 100%;
   padding: var(--size-fluid-3);
 }
 
@@ -226,6 +238,7 @@ main {
 // cart items
 
 .cart-wrapper {
+  width: 100%;
   background-color: var(--surface2-dim);
   padding: 2rem 1rem;
   border-radius: var(--radius-2);
@@ -288,6 +301,10 @@ footer {
 }
 
 // login
+
+.welcome {
+  width: 100%;
+}
 
 /* header  */
 
@@ -464,4 +481,22 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+// notification
+
+.notification {
+  width: 100%;
+}
+
+.error {
+  border-style: solid;
+  border: 2px solid #ffa4a4;
+}
+
+.success {
+  font-family: "Roboto", sans-serif;
+  background-color: #3f89f8;
+  padding: 15px;
+  color: white;
 }

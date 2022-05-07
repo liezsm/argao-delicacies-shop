@@ -10,13 +10,13 @@ const Header = () => {
   console.log(cartItems);
   return (
     <header>
-      <Link to='/' className='icon_link'>
+      <Link to='/home' className='icon_link'>
         <FontAwesomeIcon icon={faHomeAlt} className='icon' />
       </Link>
       <h1 className='shop-name'>Argao's Best Delicacies</h1>
       <div className='cart'>
         <div className='cart-icon'>
-          <Link to='/cartItems' className='icon_link'>
+          <Link to='cartItems' className='icon_link'>
             <FontAwesomeIcon icon={faShoppingCart} className='cart-icon icon' />
           </Link>
           {cartItems > 0 && (

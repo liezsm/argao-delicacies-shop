@@ -8,36 +8,53 @@ import {
   RecaptchaVerifier,
   signInWithPhoneNumber,
 } from "firebase/auth";
+
 import { auth } from "../firebase-config";
 
 // providers
 
 const g_provider = new GoogleAuthProvider();
 const fb_provider = new FacebookAuthProvider();
+
 // REGISTER
-export function signUp(email, pwd, type, user) {
+export function signUp(email, pwd, type, user, message) {
   createUserWithEmailAndPassword(auth, email, pwd)
     .then((user) => {
-      alert("sign up successfully");
+      message({ text: "sign up successfully", style: "success" });
     })
-    .catch((err) => alert(err.message));
-  type("email");
-  user({ email: "", pwd: "" });
+    .catch((err) => message({ text: err.code, style: "error" }));
+
+  setTimeout(() => {
+    type("email");
+    user({ email: "", pwd: "" });
+  }, 1500);
 }
 
 // SIGNin email
 
-export function signIn(email, pwd, user, login) {
+export function signIn(email, pwd, user, login, message, loading) {
   signInWithEmailAndPassword(auth, email, pwd)
     .then(() => {
-      alert("sign in successfully");
-      login(true);
+      // alert("sign in successfully");
+      message({ text: "sign in successfully", style: "success" });
+      loading(true);
+      setTimeout(() => {
+        login(true);
+      }, 1500);
     })
     .catch((err) => {
-      alert(err.message);
+      err.code = err.code.slice(5).replace(/\-+/g, " ").toUpperCase();
+      message({
+        text: isNew(err.code) ? `${err.code}. Sign up` : err.code,
+        style: "error",
+      });
+
       login(false);
+      loading(false);
     });
-  user({ email: "", pwd: "" });
+  setTimeout(() => {
+    user({ email: "", pwd: "" });
+  }, 2000);
 }
 
 // signin with  popup
@@ -127,15 +144,32 @@ export const PHONE = "PHONE";
 export const EMAIL = "EMAIL";
 export const SIGNUP = "SIGNUP";
 
-export const reducer = (action, email, pwd, type, user, login) => {
+export const reducer = (
+  action,
+  email,
+  pwd,
+  type,
+  user,
+  login,
+  message,
+  loading
+) => {
   switch (action) {
     case PHONE:
       return phone(user);
     case EMAIL:
-      return signIn(email, pwd, user, login);
+      return signIn(email, pwd, user, login, message, loading);
     case SIGNUP:
-      return signUp(email, pwd, type, user);
+      return signUp(email, pwd, type, user, message);
     default:
       return "default";
   }
+};
+
+// for sign up if error is accout no tfound
+
+export const isNew = (message) => {
+  message = message.toLowerCase();
+
+  return message.includes("user not found");
 };

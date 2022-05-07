@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // comps
 import Button from "./Button";
+import Notifications from "../Notification";
 // firebase
 // firebase
 import {
@@ -26,19 +27,28 @@ import { Link } from "react-router-dom";
 const LoginForm = ({ isLogged, loading }) => {
   const [type, setType] = useState("email");
   const [user, setUser] = useState({ email: "", pwd: "" });
+  const [message, setMessage] = useState({ text: "", style: "" });
 
   const action = type.toUpperCase();
   const { email, pwd } = user;
+
   // click login
   function loggingIn(event) {
     event.preventDefault();
 
-    reducer(action, email, pwd, setType, setUser, isLogged);
+    reducer(
+      action,
+      email,
+      pwd,
+      setType,
+      setUser,
+      isLogged,
+      setMessage,
+      loading
+    );
   }
 
-  // sign in options
-
-  // email and password
+  // input handler
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,7 +56,6 @@ const LoginForm = ({ isLogged, loading }) => {
     setUser((prev) => ({ ...prev, [name]: value }));
   };
 
-  console.log(user);
   return (
     <div className='container'>
       <div className='banner-left'>
@@ -58,7 +67,10 @@ const LoginForm = ({ isLogged, loading }) => {
 
       <div className='form-right'>
         <div className='login'>
+          <Notifications messages={message} setMessage={setMessage} />
+
           <h2>{action == SIGNUP ? "Sign up" : "Log in"} </h2>
+
           <form>
             <div className='inputField'>
               <input
@@ -86,7 +98,7 @@ const LoginForm = ({ isLogged, loading }) => {
             )}
 
             <button className='login-btn' id='login' onClick={loggingIn}>
-              {action == EMAIL || PHONE ? " log in" : "sign up"}
+              {action == SIGNUP ? "sign up" : "log in"}
             </button>
           </form>
 
@@ -137,15 +149,14 @@ const LoginForm = ({ isLogged, loading }) => {
           {/* sign up */}
           <div className='signUp'>
             <p>
-              New to Shop?
+              {action == SIGNUP ? "Have an account?" : "New to Shop?"}
               <Link
                 to='/'
                 onClick={() => {
-                  setType("signup");
+                  setType((prev) => (prev == "signup" ? "email" : "signup"));
                 }}
               >
-                {" "}
-                Sign up{" "}
+                {action == SIGNUP ? "Log in" : "Sign up"}
               </Link>
             </p>
           </div>
