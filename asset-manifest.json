@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/argao-delicacies-shop/static/css/main.ead19015.css",
-    "main.js": "/argao-delicacies-shop/static/js/main.00e40d5d.js",
+    "main.css": "/argao-delicacies-shop/static/css/main.59404eaa.css",
+    "main.js": "/argao-delicacies-shop/static/js/main.581913ec.js",
     "static/js/787.dcc73137.chunk.js": "/argao-delicacies-shop/static/js/787.dcc73137.chunk.js",
     "static/media/torta latte.jpg": "/argao-delicacies-shop/static/media/torta latte.083f4f76763b975d83a3.jpg",
     "static/media/torta de tuba.jpg": "/argao-delicacies-shop/static/media/torta de tuba.4042cec6b8241249c897.jpg",
@@ -18,12 +18,12 @@
     "static/media/torta de latte.jpg": "/argao-delicacies-shop/static/media/torta de latte.c942a85df56743960751.jpg",
     "static/media/torte ubes.jpg": "/argao-delicacies-shop/static/media/torte ubes.09c068ca235812e2ae9c.jpg",
     "index.html": "/argao-delicacies-shop/index.html",
-    "main.ead19015.css.map": "/argao-delicacies-shop/static/css/main.ead19015.css.map",
-    "main.00e40d5d.js.map": "/argao-delicacies-shop/static/js/main.00e40d5d.js.map",
+    "main.59404eaa.css.map": "/argao-delicacies-shop/static/css/main.59404eaa.css.map",
+    "main.581913ec.js.map": "/argao-delicacies-shop/static/js/main.581913ec.js.map",
     "787.dcc73137.chunk.js.map": "/argao-delicacies-shop/static/js/787.dcc73137.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ead19015.css",
-    "static/js/main.00e40d5d.js"
+    "static/css/main.59404eaa.css",
+    "static/js/main.581913ec.js"
   ]
 }
