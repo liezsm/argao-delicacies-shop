@@ -1,11 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
-import products from "../data .json";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
+export const getProductsAsync = createAsyncThunk(
+  "todos/getProducts",
+  async () => {
+    const res = await fetch(
+      "https://argao-shop-default-rtdb.asia-southeast1.firebasedatabase.app/products.json"
+    );
+    if (res.ok) {
+      const products = await res.json();
+      return { products };
+    }
+  }
+);
 const productsReducer = createSlice({
   name: "allProducts",
-  initialState: [...products.products],
+  initialState: [],
   reducers: {
     setProducts(state, action) {
       return state;
+    },
+  },
+  extraReducers: {
+    [getProductsAsync.fulfilled]: (state, action) => {
+      return action.payload.products;
     },
   },
 });

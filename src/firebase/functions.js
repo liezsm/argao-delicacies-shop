@@ -37,13 +37,17 @@ export function signIn(email, pwd, user, login, message, loading) {
     .then(() => {
       // alert("sign in successfully");
       message({ text: "sign in successfully", style: "success" });
-      loading(true);
+
+      // if wlay timeout dili maexecute ang notification
+      // loading effect
       setTimeout(() => {
+        loading(true);
         login(true);
-      }, 1500);
+      }, 1000);
     })
     .catch((err) => {
       err.code = err.code.slice(5).replace(/\-+/g, " ").toUpperCase();
+      // check first if account is not found, let the user sign up
       message({
         text: isNew(err.code) ? `${err.code}. Sign up` : err.code,
         style: "error",
@@ -59,7 +63,7 @@ export function signIn(email, pwd, user, login, message, loading) {
 
 // signin with  popup
 
-export function signinGoogle() {
+export function signinGoogle(loading, login) {
   signInWithPopup(auth, g_provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
@@ -67,6 +71,12 @@ export function signinGoogle() {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
+
+      // loading effect
+      setTimeout(() => {
+        loading(true);
+        login(true);
+      }, 1000);
 
       // ...
     })
@@ -79,6 +89,8 @@ export function signinGoogle() {
       // The AuthCredential type that was used.
       const credential = GoogleAuthProvider.credentialFromError(error);
       alert(errorMessage);
+      login(false);
+      loading(false);
       // ...
     });
 }
@@ -115,7 +127,7 @@ function phone(user) {
 }
 // facebook
 
-export function fbSignIn() {
+export function fbSignIn(loading, login) {
   signInWithPopup(auth, fb_provider)
     .then((result) => {
       // The signed-in user info.
@@ -124,6 +136,12 @@ export function fbSignIn() {
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       const credential = FacebookAuthProvider.credentialFromResult(result);
       const accessToken = credential.accessToken;
+      alert(result.user.displayName);
+      // loading effect
+      setTimeout(() => {
+        loading(true);
+        login(true);
+      }, 1000);
 
       // ...
     })
@@ -133,9 +151,11 @@ export function fbSignIn() {
       const errorMessage = error.message;
       // The email of the user's account used.
       const email = error.email;
+      alert(errorCode);
       // The AuthCredential type that was used.
       const credential = FacebookAuthProvider.credentialFromError(error);
-
+      login(false);
+      loading(false);
       // ...
     });
 }

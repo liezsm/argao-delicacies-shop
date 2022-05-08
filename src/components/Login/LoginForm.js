@@ -127,15 +127,15 @@ const LoginForm = ({ isLogged, loading }) => {
               img={
                 "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
               }
-              name='Google'
-              call={signinGoogle}
+              name='Sign in Google'
+              call={() => signinGoogle(loading, isLogged)}
             />
             <Button
-              name='Facebook'
+              name='Sign in Facebook'
               img={
                 "https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg"
               }
-              call={fbSignIn}
+              call={() => fbSignIn(loading, isLogged)}
             />
             {/* 
             <Button

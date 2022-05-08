@@ -7,7 +7,7 @@ const Notifications = ({ messages, setMessage }) => {
       if (text.length) {
         setMessage({ text: "", style: "" });
       }
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [messages]);
