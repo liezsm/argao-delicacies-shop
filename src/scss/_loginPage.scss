@@ -1,0 +1,165 @@
+// login page
+
+.welcome {
+  width: 100%;
+}
+
+/* header  */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+}
+.header .icon {
+  font-size: clamp(2rem, 2rem + 2vw, 4.5rem);
+}
+
+/* hero login */
+
+.container {
+  background-color: var(--surface1-dim);
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+
+  button {
+    border-radius: 0.5rem;
+  }
+}
+
+.container > * {
+  flex: 1;
+}
+
+.form-right {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.banner-left img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+// login form right
+
+.login {
+  min-width: 350px;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 0.67rem;
+  width: 80%;
+  max-height: 100%;
+  margin-inline: auto;
+  color: #000;
+  a {
+    color: blue;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  h2 {
+    color: inherit;
+  }
+}
+
+.login form {
+  width: 100%;
+
+  input {
+    background: none;
+    border: 1px solid black;
+    cursor: default;
+  }
+}
+
+/* input */
+.inputField {
+  width: 100%;
+  margin: 1rem 0;
+}
+.inputField input,
+.login-btn {
+  width: 100%;
+  padding: 1rem 0.4rem;
+}
+
+/* btn */
+.login-btn {
+  text-transform: uppercase;
+  background-color: var(--surface3-dim);
+}
+
+/* forgot */
+.login_forgot {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* or */
+
+.or {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.or p {
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.line {
+  width: 90%;
+  padding-bottom: 0.12rem;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* sign in options */
+
+.signIn_options {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.signIn_btn {
+  background-color: rgba(0, 0, 0, 0.064);
+  font-size: 0.875rem;
+  flex: 1;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.signIn_btn img {
+  width: 25px;
+  height: 75%;
+}
+
+/* new to shop */
+
+.signUp {
+  text-align: center;
+}
+
+.signUp a {
+  text-decoration: none;
+}

@@ -1,0 +1,13 @@
+// footer area
+
+footer {
+  width: 100%;
+  background-color: gray;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+
+  p {
+    color: black;
+  }
+}
